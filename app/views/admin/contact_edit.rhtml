@@ -1,0 +1,9 @@
+<h1>Edit contact</h1>
+
+<%= error_messages_for :contact %>
+
+<% form_tag :action => 'contact_update', :id => @contact do %>
+<%=render(:partial => "contactfields" )%>
+    <%= submit_tag "Save" %>
+  </p>
+<% end %>

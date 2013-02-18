@@ -1,0 +1,9 @@
+<h1>Edit Category</h1>
+
+<%= error_messages_for :category %>
+
+<% form_tag :action => 'category_update', :id => @category do %>
+<%=render(:partial => "categoryfields" )%>
+    <%= submit_tag "Save" %>
+  
+<% end %>

@@ -1,0 +1,9 @@
+<h1>New eflyer</h1>
+
+<%= error_messages_for :eflyer %>
+
+<% form_tag :action => 'eflyer_create' do %>
+<%=render(:partial => "eflyerfields" )%>
+    <%= submit_tag "Create" %>
+ 
+<% end %>

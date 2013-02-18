@@ -1,0 +1,43 @@
+
+<%=render(:partial => "submenu" )%>
+<h1>Listing eflyers</h1>
+
+<hr>
+<%= pagination_links(@eflyer_pages) %>
+<hr>
+  
+<table>
+  <tr>
+    <th>Created</th>
+    <th>Name</th>
+    <th>Costumer</th>
+    <th>Subject</th>
+    <th>State</th>
+  </tr>
+  
+<% for eflyer in @eflyers %>
+  
+<%if eflyer.hold != true%>
+  <tr  bgcolor="#FFD2D2">
+  <%else%>
+<tr>
+<%end%>  
+    <td><%=h eflyer.created_at.to_date %></td>
+    <td><%=h eflyer.name %></td>
+    <td><%=h eflyer.costumer %></td>
+    <td><%=h eflyer.subject %></td>
+    <td><%=h eflyer.delivered_to %></td>
+    
+    <td><%= link_to 'Show', :action => 'eflyer_show', :id =>  eflyer %></td>
+    <td><%= link_to 'Edit', :action => 'eflyer_edit', :id =>  eflyer  %></td>
+    <td><%= link_to 'Destroy', { :action => 'eflyer_destroy', :id => eflyer }, :confirm => 'Este registro ser&aacute; eliminado?', :method => :post %></td>
+    <td><%= link_to 'Enviar', :action => 'send_eflyer', :id =>  eflyer %></td>
+    <td><%= link_to 'Probar', :action => 'send_test', :id =>  eflyer %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+

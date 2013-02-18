@@ -1,0 +1,12 @@
+<h1>Disable many contacts</h1>
+
+<%= error_messages_for :contact %>
+
+<% form_tag :action => 'contact_disable_it' do %>
+
+
+  <p><label for="category_name">Email addresses to disable</label><br/>
+<%= text_area 'category', 'name'  %></p>
+    <%= submit_tag "Disable it" %>
+  
+<% end %>

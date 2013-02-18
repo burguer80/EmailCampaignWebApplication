@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : News Flash
+Description: A very light design suitable for community sites and blogs.
+Version    : 1.0
+Released   : 20071112
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Mensajero Express</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<%= stylesheet_link_tag 'style' %>
+</head>
+<body>
+
+<hr />
+
+
+
+<div id="page">
+  <% if flash[:notice] -%>
+<%= flash[:notice] %><br>
+<% end -%>
+  <div style="clear: both;" align="center">
+	<!-- start content -->
+	<%= yield  %>
+	<!-- end content -->
+       </div>
+       <br>
+         <br>
+           <br>
+        	<div style="clear: both;" align="center">&nbsp;<a href="http://www.mensajeroexpress.com" target="_blank"><img src="http://www.mensajeroexpress.com/images/logo_.jpg" / border="0"></a>
+</div>
+</div>
+<!-- end page -->
+<hr />
+
+<div id="footer">
+	<p>&copy;2008 Derechos Reservados. &nbsp;&bull;&nbsp;  <a href="http://www.mensajeroexpress.com/">El Mensajero Express</a>.</p>
+</div>
+<br />
+
+
+
+
+<!-- end footer -->
+</body>
+</html>

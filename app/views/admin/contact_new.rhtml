@@ -1,0 +1,9 @@
+<h1>New contact</h1>
+
+<%= error_messages_for :contact %>
+
+<% form_tag :action => 'contact_create' do %>
+<%=render(:partial => "contactfields" )%>
+    <%= submit_tag "Create" %>
+  
+<% end %>

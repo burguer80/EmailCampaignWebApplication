@@ -1,0 +1,10 @@
+<table>
+<tr> <th> <label for="categories_zones"><b>Categories</b></label></th>
+<th>  <label for="categories_zones"><b>Categories</b></label></th></tr>
+<% for category in @categories%>
+ <tr> <td>
+<%= check_box_tag('category_list[]', category.id, @zone.categories.collect {|obj| obj.id}.include?(category.id))%>
+<%=category.name%></td><td  align="center"><%=h category.contacts(:refresh).size %></td>
+</tr>
+<%end -%>
+</table>

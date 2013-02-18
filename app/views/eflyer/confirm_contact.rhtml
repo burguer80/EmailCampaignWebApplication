@@ -1,0 +1,6 @@
+¿Est&aacute;s seguro de no querer recibir  en el futuro mas informaci&oacute;n y<br>
+beneficios de las empresas que utilizan este medio para dar a conocer sus<br>
+productos o servicios,  y que además  ofrecen descuentos y rebajas?<br>
+<h1><%=@n.email %></h1>
+
+<td><%= link_to 'Aceptar', { :action => 'unsuscribe_contact', :confirmation => @n.confirmation }, :confirm => 'El correo "' + @n.email + '" ser&aacute; eliminado de nuestra lista?',:method => :post %></td>

@@ -1,0 +1,9 @@
+<h1>Edit Zone</h1>
+
+<%= error_messages_for :zone %>
+
+<% form_tag :action => 'zone_update', :id => @zone do %>
+<%=render(:partial => "zonefields" )%>
+    <%= submit_tag "Save" %>
+  
+<% end %>

@@ -1,0 +1,33 @@
+<%= link_to 'All contacts', :action => 'contact_list' %>
+<h1>Listing contacts with "<%= session[:search]%>"</h1>
+Resultados con "<%= session[:search]%>"
+<br>
+
+<hr>
+<%= pagination_links(@contact_pages) %>
+<hr><br>
+  
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Category</th>
+    <th>Test</th>
+  </tr>
+  
+<% for contact in @contacts %>
+  <tr>
+    <td><%=h contact.name %></td>
+    <td><%=h contact.email %></td>
+    <td><%=h contact.category.name %></td>
+    <td><%=h contact.tester %></td>
+    <td><%= link_to 'Edit', :action => 'contact_edit', :id =>  contact  %></td>
+    <td><%= link_to 'Destroy', { :action => 'contact_destroy', :id => contact }, :confirm => 'este registro sera eliminado?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+

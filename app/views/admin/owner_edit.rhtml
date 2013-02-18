@@ -1,0 +1,9 @@
+<h1>Edit Responsable</h1>
+
+<%= error_messages_for :owner %>
+
+<% form_tag :action => 'owner_update', :id => @owner do %>
+<%=render(:partial => "ownerfields" )%>
+    <%= submit_tag "Save" %>
+  
+<% end %>

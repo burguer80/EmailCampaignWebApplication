@@ -1,0 +1,14 @@
+<h1>Many contacts</h1>
+
+<%= error_messages_for :contact %>
+
+<% form_tag :action => 'probar' do %>
+<p><label for="contact_category_id">Categoria</label><br/>
+
+<%=collection_select('contact','category_id', @categories, 'id', 'name')%>
+
+  <p><label for="category_name">nombre</label><br/>
+<%= text_area 'category', 'name'  %></p>
+    <%= submit_tag "Create" %>
+  
+<% end %>

@@ -1,0 +1,17 @@
+
+<h1>Suscribe you email address to our contact list</h1>
+Inscribe tu correo electr&oacute;nico a nuestra lista de contactos<br>
+
+<%= error_messages_for :contact %>
+
+
+<% form_tag :action => 'contact_create' do %>
+<%=render(:partial => "contactfields" )%>
+
+    <%= submit_tag "Suscribe me / Inscribirme" %>
+<br/>
+
+
+
+  
+<% end %>

@@ -1,0 +1,15 @@
+
+  
+
+
+  <p><label for="contact_email">Your Email address / Direcci&oacute;n de correo electr&oacute;nico</label><br/>
+<%= text_field 'contact', 'email'  %><br>
+<label for="contact_email">Your State / T&uacute; estado</label><br/>
+<%=collection_select('contact','category_id', @categories, 'id', 'name')%>
+</p>
+  <p></p>
+<br>
+  
+
+
+

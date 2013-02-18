@@ -1,0 +1,9 @@
+<h1>New Responsable</h1>
+
+<%= error_messages_for :owner %>
+
+<% form_tag :action => 'owner_create' do %>
+<%=render(:partial => "ownerfields" )%>
+    <%= submit_tag "Create" %>
+  
+<% end %>

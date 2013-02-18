@@ -1,0 +1,29 @@
+<h1>Listing Categories</h1>
+<hr>
+<%= pagination_links(@category_pages) %>
+<hr> <!--
+  <%= link_to 'New category', :action => 'category_new' %>
+//-->
+<table>
+  <tr>
+    <th>Name</th>
+     <th>Count</th>
+ 
+  </tr>
+  
+<% for category in @categories %>
+  <tr>
+    <td><%=h category.name %></td>
+    <td  align="center"><%=h category.contacts(:refresh).size %></td>
+ <!--
+ <td><%= link_to 'Edit', :action => 'category_edit', :id =>  category  %></td>
+    <td><%= link_to 'Destroy', { :action => 'category_destroy', :id => category }, :confirm => 'este registro sera eliminado?', :method => :post %></td>
+  </tr>
+  //-->
+<% end %>
+</table>
+
+<br />
+
+
+

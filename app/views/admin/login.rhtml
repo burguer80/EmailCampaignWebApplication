@@ -1,0 +1,13 @@
+<div title="Account login" id="loginform">
+<%= content_tag :h3 %>
+    <div class="form admin">
+     
+    <% form_tag :action => 'login', :user => @user.login do %>
+		<ul >
+			<li>&nbsp;&nbsp;&nbsp;Usuario: <%= text_field 'user', 'login',:size => '16' %></li>
+			<li>Password: <%= password_field 'user', 'salt',:size => '16'  %></li>
+		</ul>
+	  <%= submit_tag 'Login' %>
+	<% end %>
+    </div>
+</div>

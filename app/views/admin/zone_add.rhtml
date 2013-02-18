@@ -1,0 +1,10 @@
+<h1>Associate Zone-Categories</h1><h2> <%=@zone.name%> </h2>
+
+
+<%= error_messages_for :zone %>
+
+<% form_tag :action => 'zone_associate', :id => @zone do %>
+  <%= render :partial => 'categories' %>
+    <%= submit_tag "Save" %>
+  
+<% end %>

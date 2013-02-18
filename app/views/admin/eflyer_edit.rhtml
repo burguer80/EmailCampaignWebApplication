@@ -1,0 +1,37 @@
+<%=link_to 'Historial', :action => 'eflyer_list' %>
+
+	<!-- start sidebar one -->
+	<div id="sidebar1" class="sidebar">
+		
+				<h1>Eflyer</h1>
+
+<%= error_messages_for :eflyer %>
+
+<% form_tag :action => 'eflyer_update', :id => @eflyer do %>
+<%if @eflyer.photo != nil%>
+  <%=render(:partial => "eflyerfields" )%>
+    
+    <%= submit_tag "Actualizar" %>
+   <%end%>
+<% end %>
+
+
+		
+	</div>
+	<!-- end sidebar one -->
+        <div id="sidebar2" class="sidebar">
+          
+          <%if @eflyer.photo != nil%>
+<%= link_to 'Borrar archivo', { :action => 'photo_destroy', :id => @eflyer }, :confirm => 'Este archivo ser&aacute; eliminado?', :method => :post %>          
+             
+          <%= @eflyer.body %>
+          <%else%>
+          <%= link_to 'Subir archivo', :action => 'photo_new', :id => @eflyer  %>
+          
+          <%end%>
+
+        
+
+	</div>
+	<!-- end sidebar two -->
+        

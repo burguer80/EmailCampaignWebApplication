@@ -1,0 +1,35 @@
+ <%= link_to 'Activos (' + Contact.count(:conditions => 'active = true').to_s + ')', :action => 'contact_list',:filter => nil %> -- <%= link_to 'De prueba ('+ Contact.count(:conditions => 'tester = true').to_s + ')', :action => 'contact_list',:filter => 1 %> -- <%= link_to 'Inactivos ('+ Contact.count(:conditions => 'active = false').to_s + ')', :action => 'contact_list',:filter => 2 %>
+
+<h1>Listing contacts</h1>
+
+<%= form_tag :action => 'contact_search'  %>
+  <%= text_field :contact, :name %>
+  <%=submit_tag "Buscar"%>
+<% end_form_tag %><br>
+
+<hr>
+<%= pagination_links(@contact_pages) %>
+<hr><br>
+  <%= link_to 'New contact', :action => 'contact_new' %> --  <%= link_to 'Many', :action => 'contact_createmany' %> --  <%= link_to 'Disable_many', :action => 'contact_disablemany' %>
+<table>
+  <tr>
+   
+    <th>Email</th>
+
+  </tr>
+ 
+<% for contact in @contacts %>
+  <tr>
+    
+    <td><%=h contact.email %></td>
+    
+    <td><%= link_to 'Edit', :action => 'contact_edit', :id =>  contact  %></td>
+    <td><%= link_to 'Destroy', { :action => 'contact_destroy', :id => contact }, :confirm => 'este registro sera eliminado?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+

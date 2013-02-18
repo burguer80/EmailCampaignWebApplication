@@ -1,0 +1,18 @@
+<h1>Listing Users</h1>
+
+  <%= link_to 'New User', :action => 'user_new' %>
+<table>
+  <tr>
+    <th>Name</th>
+ 
+  </tr>
+  
+<% for user in @users %>
+  <tr>
+    <td><%=h user.login %></td>
+    <td><%= link_to 'Destroy', { :action => 'user_destroy', :id => user }, :confirm => 'este registro sera eliminado?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

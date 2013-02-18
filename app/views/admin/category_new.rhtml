@@ -1,0 +1,12 @@
+<h1>New Category</h1>
+
+<%= error_messages_for :category %>
+<% if session[:dnss] %>
+<%=session[:dnss]%>
+<%end%>
+
+<% form_tag :action => 'category_create' do %>
+<%=render(:partial => "categoryfields" )%>
+    <%= submit_tag "Create" %>
+  </p>
+<% end %>

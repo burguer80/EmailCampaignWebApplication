@@ -1,0 +1,9 @@
+<h1>New User</h1>
+
+<%= error_messages_for :user %>
+
+<% form_tag :action => 'user_create' do %>
+<%=render(:partial => "userfields" )%>
+    <%= submit_tag "Create" %>
+  
+<% end %>
